@@ -73,7 +73,7 @@ set first_name = 'GROUCHO'
 where first_name = 'HARPO' and actor_id = '172';
 
 -- 5a: You cannot locate the schema of the address table. Which query would you use to re-create it?
-/* SHOW CREATE TABLE sakila.address;
+SHOW CREATE TABLE sakila.address;
 create table address (address_id INT AUTO_INCREMENT NOT NULL,
 address varchar(100) not null,
 address2 varchar(100) DEFAULT NULL,
@@ -84,7 +84,7 @@ phone int(13) not null,
 location geometry not null,
 last_udpate timestamp not null default current_timestamp on update current_timestamp,
 primary key (address_id)
-) engine = innoDB default charset = utf8; */
+) engine = innoDB default charset = utf8;
 
 -- 6a:  Use JOIN to display the first and last names, as well as the address, of each staff member. Use the tables staff and address.
 select first_name,
@@ -241,4 +241,3 @@ from the_top_five_genres_in_gross_revenue;
 
 -- 8c: You find that you no longer need the view top_five_genres. Write a query to delete it.
 drop view the_top_five_genres_in_gross_revenue
-
